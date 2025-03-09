@@ -24,5 +24,8 @@ data class Product(val id: Int, @JsonIgnore val details: ProductDetails) {
 
     val inventory: Int
         get() = details.inventory
+
+    val cost: Double
+        get() = details.cost!!
 }
 

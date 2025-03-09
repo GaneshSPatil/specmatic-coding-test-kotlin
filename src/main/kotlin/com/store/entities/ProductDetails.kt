@@ -15,4 +15,7 @@ data class ProductDetails(
     @field:Min(1)
     @field:Max(9999)
     val inventory: Int,
+
+    @field:NotNull
+    val cost: Double? = 0.0,
 )
