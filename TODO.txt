@@ -1,0 +1,7 @@
+Following feedback has been additionally incorporated from the previous Java Solution
+
+1. Implement the solution in Java
+2. Use Composition over inheritance to represent Product has ProductDetails
+3. Remove ResponseEntity as return type from Controller responses
+4. Introduce service for Controller -> Service -> Repository communication
+5. Use single method to retrieve products providing optional ProductType filter.
