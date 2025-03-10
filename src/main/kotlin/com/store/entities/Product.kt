@@ -3,29 +3,22 @@ package com.store.entities
 import com.fasterxml.jackson.annotation.JsonIgnore
 
 /**
- * Using Composition over Inheritance for "has-a" relationship
+ * Using Composition over Inheritance for "has-a" relationship with kotlin delegation "by" feature
+ *
+ * Implements `ProductDetailsInfo` via delegation to `details`, allowing the `Product` class to expose
+ * properties of `ProductDetailsInfo`.
+ *
  *
  * Pros:
  *  - Composition denotes the relationship correctly
- *  - easy to understand
+ *  - Uses kotlin's delegation functionality
+ *  - Less boilerplate - remove redundant getter properties of field
  *
  * Cons:
  *  - Code Duplication
- *  - violates open-closed principle
- *    Every time a new needs to be added to product-details,
- *    it requires changes to product class :/
+ *  - Unnecessarily defining ProductDetailsInfo Interface with abstract fields, which again are defined in ProductDetails
+ *  - Every time a new needs to be added to product-details,
+ *    it requires adding at two places :/
  */
-data class Product(val id: Int, @JsonIgnore val details: ProductDetails) {
-    val name: String
-        get() = details.name
 
-    val type: ProductType
-        get() = details.type
-
-    val inventory: Int
-        get() = details.inventory
-
-    val cost: Double
-        get() = details.cost!!
-}
-
+data class Product(val id: Int, @JsonIgnore val details: ProductDetails) : ProductDetailsInfo by details
