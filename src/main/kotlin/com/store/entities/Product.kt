@@ -1,7 +1,5 @@
 package com.store.entities
 
-import com.fasterxml.jackson.annotation.JsonIgnore
-
 /**
  * Using Composition over Inheritance for "has-a" relationship with kotlin delegation "by" feature
  *
@@ -21,4 +19,4 @@ import com.fasterxml.jackson.annotation.JsonIgnore
  *    it requires adding at two places :/
  */
 
-data class Product(val id: Int, @JsonIgnore val details: ProductDetails) : ProductDetailsInfo by details
+data class Product(val id: Int, private val details: ProductDetails) : ProductDetailsInfo by details

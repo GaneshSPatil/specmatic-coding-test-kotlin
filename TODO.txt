@@ -10,4 +10,4 @@ Following feedback has been additionally incorporated from the previous Java Sol
 4. <DONE> Introduce service for Controller -> Service -> Repository communication
 5. <DONE> Use single method to retrieve products providing optional ProductType filter.
 6. <DONE> Tests for the TextOnlyValidator
-7. <DONE> TextOnly should enforce null check
+7. <DONE> TextOnly should enforce null check.
