@@ -1,7 +1,6 @@
 package com.store.controllers
 
 import com.store.entities.Product
-import com.store.entities.ProductDetails
 import com.store.entities.ProductId
 import com.store.entities.ProductType
 import com.store.services.ProductsService
@@ -20,7 +19,7 @@ class ProductsController(private val service: ProductsService) {
     }
 
     @PostMapping
-    fun createProduct(@Valid @RequestBody details: ProductDetails): ResponseEntity<ProductId> {
-        return ResponseEntity(service.create(details), HttpStatus.CREATED)
+    fun createProduct(@Valid @RequestBody product: Product): ResponseEntity<ProductId> {
+        return ResponseEntity(service.create(product), HttpStatus.CREATED)
     }
 }

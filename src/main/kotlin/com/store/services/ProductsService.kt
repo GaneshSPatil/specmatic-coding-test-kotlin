@@ -1,7 +1,6 @@
 package com.store.services
 
 import com.store.entities.Product
-import com.store.entities.ProductDetails
 import com.store.entities.ProductId
 import com.store.entities.ProductType
 import com.store.repositories.ProductsRepository
@@ -13,7 +12,7 @@ class ProductsService(private val repository: ProductsRepository) {
         return repository.getProductsBy(type)
     }
 
-    fun create(details: ProductDetails): ProductId {
-        return repository.create(details);
+    fun create(product: Product): ProductId {
+        return repository.create(product);
     }
 }
