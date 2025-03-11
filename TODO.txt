@@ -1,0 +1,13 @@
+Following feedback has been additionally incorporated from the previous Java Solution
+
+1. <DONE> Implement the solution in Kotlin
+2. <DONE> Use Composition over inheritance to represent Product has ProductDetails
+3. <NOT IMPLEMENTED> Remove ResponseEntity as return type from Controller responses?
+   This will lead to different return types in the controller
+   As, get will return List<Product>
+   And, post will return ResponseEntity<ID> as we need to return 201.
+
+4. <DONE> Introduce service for Controller -> Service -> Repository communication
+5. <DONE> Use single method to retrieve products providing optional ProductType filter.
+6. <DONE> Tests for the TextOnlyValidator
+7. <DONE> TextOnly should enforce null check.
